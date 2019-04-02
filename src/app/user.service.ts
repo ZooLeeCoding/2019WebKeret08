@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserService {
 
   constructor(private http: HttpClient) { }
@@ -15,11 +13,11 @@ export class UserService {
         'Content-Type': 'application/json'
       })
     };
-    const login = {
+    const logData = {
       username: username,
       password: password
     };
-    return this.http.post('http://localhost:5000/login', login, 
+    return this.http.post('http://localhost:5000/login', logData, 
       httpOptions);
   }
 }

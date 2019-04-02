@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 
 @Component({
@@ -10,7 +11,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, 
+    public userService: UserService) { }
 
   ngOnInit() {
   }
@@ -18,8 +20,15 @@ export class LoginComponent implements OnInit {
   login(form: NgForm) {
     var submittedForm = form.form.value;
     console.log(form.form.value);
-    localStorage.setItem("username", submittedForm.username);
-    this.router.navigate(["/main", {name: "myname"}]);
+    this.userService.login(submittedForm.username, 
+      submittedForm.password).subscribe(data => {
+        console.log(data);
+        localStorage.setItem("username", submittedForm.username);
+        this.router.navigate(["/main", 
+          {name: submittedForm.username}]);
+      }, error => {
+        console.log(error.statusText, error.status);
+      });
   }
 
 }
