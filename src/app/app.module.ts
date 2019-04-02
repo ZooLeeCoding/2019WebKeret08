@@ -12,6 +12,9 @@ import { MaterialModule } from './material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { BrowserAnimationsModule } from
   '@angular/platform-browser/animations';
+
+import { HttpClientModule } from '@angular/common/http';
+
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
@@ -32,6 +35,7 @@ import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
     MaterialModule,
     FlexLayoutModule,
     BrowserAnimationsModule
