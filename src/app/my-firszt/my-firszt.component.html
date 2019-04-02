@@ -1,0 +1,12 @@
+<div>
+  {{1 + 1}}
+  {{valtozo2}} leendo ara: {{valtozo3}}
+  <ul *ngFor="let gyumolcs of valtozoLista">
+    <li *ngIf="valtozo2 === 'minden' || gyumolcs.ara < 100" (click)="venniAkarok(gyumolcs)">
+      {{gyumolcs.neve}}, ára: {{gyumolcs.ara}}ft
+    </li>
+  </ul>
+  <input type="text" [(ngModel)]="valtozo2">
+  <input type="number" [(ngModel)]="valtozo3">
+  <button (click)="raktarFeltoltes()">RAKTARTOLTES</button>
+</div>

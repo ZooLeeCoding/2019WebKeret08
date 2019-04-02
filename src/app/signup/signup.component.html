@@ -1,0 +1,19 @@
+<section class="signup-form">
+  <form fxLayout="column" fxLayoutAttribute="center center" 
+  #f="ngForm" (ngSubmit)="submitForm(f)">
+    <mat-form-field>
+      <input type="text" matInput placeholder="username" required ngModel
+      name="username" #username="ngModel">
+    </mat-form-field>
+    <mat-form-field hintLabel="Legalább 6-8 karakter legyen">
+      <input type="password" matInput placeholder="password" required ngModel
+      name="password" #password="ngModel">
+    </mat-form-field>
+    <mat-form-field>
+      <input type="email" matInput placeholder="email@your.email" required ngModel
+      name="email" #email="ngModel">
+    </mat-form-field>
+    <mat-error *ngIf="email.hasError('required')">Email cannot be empty</mat-error>
+    <button mat-raised-button type="submit" color="primary">Submit</button>
+  </form>
+</section>

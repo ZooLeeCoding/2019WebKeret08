@@ -1,0 +1,14 @@
+Angular Material
+
+CDK + Material 
+
+BrowserAnimationsModule
+FleyLayoutModule (CSS Flexbox)
+HammerJS
+
+https://material.angular.io/components/card/overview
+A my-firszt és my-second komponensek legyenek 
+ilyen cardokba foglalva
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
