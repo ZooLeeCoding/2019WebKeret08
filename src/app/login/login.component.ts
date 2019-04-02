@@ -11,6 +11,8 @@ import { UserService } from '../user.service';
 })
 export class LoginComponent implements OnInit {
 
+  error: string;
+
   constructor(private router: Router, 
     public userService: UserService) { }
 
@@ -27,6 +29,7 @@ export class LoginComponent implements OnInit {
         this.router.navigate(["/main", 
           {name: submittedForm.username}]);
       }, error => {
+        this.error = error.statusText;
         console.log(error.statusText, error.status);
       });
   }

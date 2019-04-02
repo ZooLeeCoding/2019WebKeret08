@@ -8,6 +8,8 @@
     <mat-form-field>
       <input type="password" matInput placeholder="password" 
       required ngModel name="password" #password="ngModel">
+      <div [hidden]="!error" style="color:red"> 
+        Wrong username or password</div>
     </mat-form-field>
     <button mat-raised-button type="submit" 
     color="primary">Login</button>
